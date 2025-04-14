@@ -1,0 +1,14 @@
+2025-04-14 14:51:10,483 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 14:51:10,723 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 14:51:10,724 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 14:51:10,862 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 14:51:10,862 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 14:51:10,898 - SearchResultsPage - INFO - Found 1 listings
+2025-04-14 14:51:10,899 - SearchResultsPage - INFO - Validating search results
+2025-04-14 14:51:10,900 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="stays-page-heading"]
+2025-04-14 14:51:10,926 - SearchResultsPage - INFO - Search results count: 1000
+2025-04-14 14:51:10,926 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 14:51:10,926 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 14:51:18,064 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/1342059361670156698?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744631470_P3FgLiMNL_xw2tJ9&previous_page_section_name=1000&federated_search_id=cdb4a999-209b-4ba6-92b3-27b425de4847
+2025-04-14 14:51:18,149 - SearchResultsPage - WARNING - Guest count mismatch: 2 vs 23
+2025-04-14 14:51:18,149 - SearchResultsPage - INFO - Validation results: {'location': True, 'guests': False, 'dates': True}

@@ -1,0 +1,9 @@
+2025-04-14 01:45:19,915 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 01:45:19,916 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 01:45:19,959 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 01:45:19,972 - ListingPage - INFO - Translation popup is visible, closing it
+2025-04-14 01:45:19,972 - ListingPage - INFO - Getting element by role: button, name: Close, exact: False
+2025-04-14 01:45:19,973 - ListingPage - INFO - Attempting to click element by locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/973678143608218049?adults=2&check_in=2025-05-16&check_out=2025-05-18&children=1&search_mode=regular_search&infants=0&pets=0&source_impression_id=p3_1744584314_P3wHL5v5E17RQbAB&previous_page_section_name=1000&federated_search_id=71d572a6-c974-4912-94ba-6f451df76a76'> selector='internal:role=button[name="Close"i]'> (Attempt 1/3)
+2025-04-14 01:45:21,043 - ListingPage - INFO - Extracting reservation details
+2025-04-14 01:45:21,043 - ListingPage - INFO - Getting locator for selector: div[class="_1czgyoo"]
+2025-04-14 01:45:21,043 - ListingPage - INFO - Retrieving text from element by Locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/973678143608218049?adults=2&check_in=2025-05-16&check_out=2025-05-18&children=1&search_mode=regular_search&infants=0&pets=0&source_impression_id=p3_1744584314_P3wHL5v5E17RQbAB&previous_page_section_name=1000&federated_search_id=71d572a6-c974-4912-94ba-6f451df76a76'> selector='div[class="_1czgyoo"]'>

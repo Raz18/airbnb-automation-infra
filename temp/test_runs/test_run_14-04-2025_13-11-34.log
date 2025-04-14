@@ -1,0 +1,22 @@
+2025-04-14 13:11:34,134 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 13:11:34,282 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 13:11:34,282 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 13:11:34,340 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 13:11:34,341 - SearchResultsPage - INFO - Validating search results
+2025-04-14 13:11:34,341 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="stays-page-heading"]
+2025-04-14 13:11:34,360 - SearchResultsPage - INFO - Search results count: 1000
+2025-04-14 13:11:34,360 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="little-search-guests"]
+2025-04-14 13:11:34,427 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 13:11:41,738 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744625493_P3_3Wezx8-WwCOE2&previous_page_section_name=1000&federated_search_id=fcf318a4-f64c-43ee-b725-91f1f0a66ff5
+2025-04-14 13:11:42,003 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="little-search-anytime"]
+2025-04-14 13:11:42,020 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 13:11:48,140 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/17050170?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744625494_P3wvkVRXDktWAAVp&previous_page_section_name=1000&federated_search_id=fcf318a4-f64c-43ee-b725-91f1f0a66ff5
+2025-04-14 13:11:48,272 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="little-search-anytime"]
+2025-04-14 13:11:48,288 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 13:11:54,388 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/17050310?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744625494_P3h4pSPyXMXMlORA&previous_page_section_name=1000&federated_search_id=fcf318a4-f64c-43ee-b725-91f1f0a66ff5
+2025-04-14 13:11:54,572 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="little-search-anytime"]
+2025-04-14 13:11:54,605 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 13:12:01,199 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/665818881844885425?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744625494_P3C-ZJnFt-bUDCaG&previous_page_section_name=1000&federated_search_id=fcf318a4-f64c-43ee-b725-91f1f0a66ff5
+2025-04-14 13:12:01,285 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="little-search-anytime"]
+2025-04-14 13:12:01,304 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 13:12:07,589 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/1345916093307147451?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744625494_P3XX7uWa8__JjmWd&previous_page_section_name=1000&federated_search_id=fcf318a4-f64c-43ee-b725-91f1f0a66ff5

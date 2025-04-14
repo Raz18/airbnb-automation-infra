@@ -1,0 +1,119 @@
+2025-04-14 18:46:29,133 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:46:29,433 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 18:46:29,433 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:46:29,489 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 18:46:29,490 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 18:46:29,511 - SearchResultsPage - INFO - Found 1 listings
+2025-04-14 18:46:29,513 - SearchResultsPage - INFO - Looking for highest-rated listing
+2025-04-14 18:46:29,513 - SearchResultsPage - INFO - Starting iteration over all pages of search results
+2025-04-14 18:46:29,514 - SearchResultsPage - INFO - Processing page 1
+2025-04-14 18:46:29,514 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:46:29,664 - SearchResultsPage - INFO - Collected 18 listings from page 1
+2025-04-14 18:46:29,664 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:29,694 - SearchResultsPage - INFO - New highest rating found: 4.83 with 48 reviews
+2025-04-14 18:46:29,694 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:29,741 - SearchResultsPage - INFO - New highest rating found: 4.88 with 216 reviews
+2025-04-14 18:46:29,741 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:29,779 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:29,842 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:29,891 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:29,968 - SearchResultsPage - INFO - New highest rating found: 4.97 with 32 reviews
+2025-04-14 18:46:29,969 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,028 - SearchResultsPage - INFO - New highest rating found: 5.0 with 5 reviews
+2025-04-14 18:46:30,028 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,103 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,152 - SearchResultsPage - WARNING - Couldn't parse rating from listing: could not convert string to float: 'New'
+2025-04-14 18:46:30,153 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,248 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,384 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,426 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,475 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,559 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,591 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,654 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,709 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:30,736 - SearchResultsPage - INFO - Found highest rated listing with rating 5.0 and 5 reviews
+2025-04-14 18:46:31,791 - SearchResultsPage - INFO - Attempting to navigate to page number 2
+2025-04-14 18:46:33,123 - SearchResultsPage - INFO - Starting iteration over all pages of search results
+2025-04-14 18:46:33,124 - SearchResultsPage - INFO - Processing page 2
+2025-04-14 18:46:33,124 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:46:33,175 - SearchResultsPage - INFO - Collected 18 listings from page 2
+2025-04-14 18:46:33,175 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,214 - SearchResultsPage - INFO - Same rating but more reviews: 5.0 with 9 reviews
+2025-04-14 18:46:33,215 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,258 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,309 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,329 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,353 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,380 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,394 - SearchResultsPage - WARNING - Couldn't parse rating from listing: could not convert string to float: 'New'
+2025-04-14 18:46:33,394 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,408 - SearchResultsPage - WARNING - Couldn't parse rating from listing: could not convert string to float: 'New'
+2025-04-14 18:46:33,408 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,441 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,463 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,472 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,491 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,508 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,526 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,542 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,561 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,578 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:33,594 - SearchResultsPage - INFO - Found highest rated listing with rating 5.0 and 9 reviews
+2025-04-14 18:46:34,642 - SearchResultsPage - INFO - Attempting to navigate to page number 3
+2025-04-14 18:46:35,825 - SearchResultsPage - INFO - Starting iteration over all pages of search results
+2025-04-14 18:46:35,826 - SearchResultsPage - INFO - Processing page 3
+2025-04-14 18:46:35,826 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:46:35,907 - SearchResultsPage - INFO - Collected 18 listings from page 3
+2025-04-14 18:46:35,907 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:35,988 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,031 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,052 - SearchResultsPage - WARNING - Couldn't parse rating from listing: could not convert string to float: 'New'
+2025-04-14 18:46:36,052 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,082 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,114 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,136 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,164 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,176 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,195 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,226 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,247 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,282 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,309 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,345 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,358 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,392 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,432 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:36,458 - SearchResultsPage - INFO - Found highest rated listing with rating 5.0 and 9 reviews
+2025-04-14 18:46:37,524 - SearchResultsPage - INFO - Attempting to navigate to page number 4
+2025-04-14 18:46:38,812 - SearchResultsPage - INFO - Starting iteration over all pages of search results
+2025-04-14 18:46:38,812 - SearchResultsPage - INFO - Processing page 4
+2025-04-14 18:46:38,812 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:46:38,853 - SearchResultsPage - INFO - Collected 18 listings from page 4
+2025-04-14 18:46:38,853 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:38,867 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:38,895 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:38,912 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:38,932 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:38,950 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:38,966 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:38,985 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,005 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,022 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,039 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,057 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,072 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,091 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,107 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,128 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,146 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,165 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:46:39,180 - SearchResultsPage - INFO - Found highest rated listing with rating 5.0 and 9 reviews
+2025-04-14 18:46:40,223 - SearchResultsPage - INFO - Attempting to navigate to page number 5
+2025-04-14 18:46:40,285 - SearchResultsPage - WARNING - Error checking if next page link is visible: Locator.is_visible: Error: strict mode violation: get_by_role("link", name="5") resolved to 2 elements:
+    1) <a href="/s/Tel-Aviv/homes?refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2025-05-01&monthly_length=3&monthly_end_date=2025-08-01&price_filter_input_type=0&channel=EXPLORE&date_picker_type=calendar&checkin=2025-05-14&checkout=2025-05-17&adults=2&source=structured_search_input_header&search_type=user_map_move&query=Tel%20Aviv&place_id=ChIJH3w7GaZMHRURkD-WwKJy-8E&search_mode=regular_search&price_filter_num_nights=3&ne_lat=32.102053006281366&ne_lng=34.8070782…>5</a> aka get_by_role("link", name="5", exact=True)
+    2) <a href="/s/Tel-Aviv/homes?refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2025-05-01&monthly_length=3&monthly_end_date=2025-08-01&price_filter_input_type=0&channel=EXPLORE&date_picker_type=calendar&checkin=2025-05-14&checkout=2025-05-17&adults=2&source=structured_search_input_header&search_type=user_map_move&query=Tel%20Aviv&place_id=ChIJH3w7GaZMHRURkD-WwKJy-8E&search_mode=regular_search&price_filter_num_nights=3&ne_lat=32.102053006281366&ne_lng=34.8070782…>15</a> aka get_by_role("link", name="15")
+
+Call log:
+    - checking visibility of get_by_role("link", name="5")
+

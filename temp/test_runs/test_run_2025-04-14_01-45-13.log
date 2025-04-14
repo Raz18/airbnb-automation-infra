@@ -1,0 +1,17 @@
+2025-04-14 01:45:13,905 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 01:45:14,088 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 01:45:14,088 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 01:45:14,143 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 01:45:14,144 - SearchResultsPage - INFO - Validating search results
+2025-04-14 01:45:14,144 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="little-search-location"]
+2025-04-14 01:45:14,166 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="little-search-anytime"]
+2025-04-14 01:45:14,181 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="little-search-guests"]
+2025-04-14 01:45:14,244 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="stays-page-heading"]
+2025-04-14 01:45:14,389 - SearchResultsPage - INFO - Found 18 listings
+2025-04-14 01:45:14,389 - SearchResultsPage - INFO - Looking for highest-rated listing
+2025-04-14 01:45:14,406 - SearchResultsPage - INFO - New highest rating found: 4.79 with 24 reviews
+2025-04-14 01:45:14,420 - SearchResultsPage - INFO - New highest rating found: 5.0 with 5 reviews
+2025-04-14 01:45:14,571 - SearchResultsPage - INFO - Same rating but more reviews: 5.0 with 51 reviews
+2025-04-14 01:45:14,676 - SearchResultsPage - INFO - Found highest rated listing with rating 5.0 and 51 reviews
+2025-04-14 01:45:14,676 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 01:45:21,043 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/973678143608218049?adults=2&check_in=2025-05-16&check_out=2025-05-18&children=1&search_mode=regular_search&infants=0&pets=0&source_impression_id=p3_1744584314_P3wHL5v5E17RQbAB&previous_page_section_name=1000&federated_search_id=71d572a6-c974-4912-94ba-6f451df76a76

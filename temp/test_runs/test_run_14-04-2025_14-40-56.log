@@ -1,0 +1,12 @@
+2025-04-14 14:40:56,896 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 14:40:57,980 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 14:40:57,981 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 14:40:58,041 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 14:40:58,041 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 14:40:58,061 - SearchResultsPage - INFO - Found 1 listings
+2025-04-14 14:40:58,063 - SearchResultsPage - INFO - Validating search results
+2025-04-14 14:40:58,063 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="stays-page-heading"]
+2025-04-14 14:40:58,084 - SearchResultsPage - INFO - Search results count: 1000
+2025-04-14 14:40:58,084 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 14:40:58,084 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 14:41:04,994 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/1342059361670156698?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744630857_P3t0HVIAEtWi-qSF&previous_page_section_name=1000&federated_search_id=577efc47-a912-4662-aab3-65a746d290a4

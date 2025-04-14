@@ -1,0 +1,19 @@
+{
+  "search_url": "https://www.airbnb.com/s/Tel-Aviv/homes?refinement_paths%5B%5D=%2Fhomes&flexible_trip_lengths%5B%5D=one_week&monthly_start_date=2025-05-01&monthly_length=3&monthly_end_date=2025-08-01&price_filter_input_type=0&channel=EXPLORE&date_picker_type=calendar&checkin=2025-05-14&checkout=2025-05-17&adults=2&source=structured_search_input_header&search_type=filter_change",
+  "search_title": "Over 1,000 places in Tel Aviv-Yafo",
+  "timestamp": "14-04-2025_15-01-12",
+  "highest_rated": {
+    "name": "Apartment in Tel Aviv-Yafo",
+    "subtitle": "Dyunat",
+    "rating": 5.0,
+    "reviews": 6,
+    "price": 1090
+  },
+  "cheapest": {
+    "name": "Apartment in Holon",
+    "subtitle": "Colorfull 3 Bd aprt. near Park. 5 min to Tel Aviv",
+    "rating": 4.77,
+    "reviews": 64,
+    "price": 856
+  }
+}

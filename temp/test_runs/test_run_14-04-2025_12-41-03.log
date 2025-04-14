@@ -1,0 +1,24 @@
+2025-04-14 12:41:03,446 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 12:41:03,446 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 12:41:03,496 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 12:41:03,530 - ListingPage - INFO - Translation popup is visible, closing it
+2025-04-14 12:41:03,531 - ListingPage - INFO - Getting element by role: button, name: Close, exact: False
+2025-04-14 12:41:03,531 - ListingPage - INFO - Attempting to click element by locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744623655_P3_HpiwY34nt85Iu&previous_page_section_name=1000&federated_search_id=fb56ca20-67ab-4531-8932-b8fe23aae5f3'> selector='internal:role=button[name="Close"i]'> (Attempt 1/3)
+2025-04-14 12:41:10,547 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 12:41:10,547 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 12:41:10,580 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 12:41:16,180 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 12:41:16,180 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 12:41:16,197 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 12:41:21,796 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 12:41:21,796 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 12:41:21,866 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 12:41:28,383 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 12:41:28,383 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 12:41:28,430 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 12:41:35,291 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 12:41:35,292 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 12:41:35,347 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 12:41:41,014 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 12:41:41,014 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 12:41:41,031 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]

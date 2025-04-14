@@ -1,0 +1,22 @@
+2025-04-14 15:03:34,991 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 15:03:34,992 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 15:03:35,048 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 15:03:35,074 - ListingPage - INFO - Translation popup is visible, closing it
+2025-04-14 15:03:35,075 - ListingPage - INFO - Getting element by role: button, name: Close, exact: False
+2025-04-14 15:03:35,075 - ListingPage - INFO - Attempting to click element by locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744632207_P3DH6CLXYE4V2tSG&previous_page_section_name=1000&federated_search_id=bc94980c-faac-4df3-a668-ce199cb60f79'> selector='internal:role=button[name="Close"i]'> (Attempt 1/3)
+2025-04-14 15:03:36,161 - ListingPage - INFO - Waiting for the listing page to load
+2025-04-14 15:03:36,161 - ListingPage - INFO - Waiting for element to appear: div[class="_10qud2i"]
+2025-04-14 15:03:36,186 - ListingPage - INFO - Getting locator for selector: [data-testid="translation-announce-modal"]
+2025-04-14 15:03:36,200 - ListingPage - INFO - Extracting reservation details
+2025-04-14 15:03:36,201 - ListingPage - INFO - Getting locator for selector: div[class="_1czgyoo"]
+2025-04-14 15:03:36,201 - ListingPage - INFO - Retrieving text from element by Locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744632207_P3DH6CLXYE4V2tSG&previous_page_section_name=1000&federated_search_id=bc94980c-faac-4df3-a668-ce199cb60f79'> selector='div[class="_1czgyoo"]'>
+2025-04-14 15:03:36,217 - ListingPage - INFO - Getting locator for selector: ._1k1ce2w
+2025-04-14 15:03:36,217 - ListingPage - INFO - Retrieving text from element by Locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744632207_P3DH6CLXYE4V2tSG&previous_page_section_name=1000&federated_search_id=bc94980c-faac-4df3-a668-ce199cb60f79'> selector='._1k1ce2w'>
+2025-04-14 15:03:36,233 - ListingPage - INFO - Getting locator for selector: div[class="_1avmy66"]
+2025-04-14 15:03:36,233 - ListingPage - INFO - Retrieving text from element by Locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744632207_P3DH6CLXYE4V2tSG&previous_page_section_name=1000&federated_search_id=bc94980c-faac-4df3-a668-ce199cb60f79'> selector='div[class="_1avmy66"]'>
+2025-04-14 15:03:36,248 - ListingPage - INFO - Getting locator for selector: [data-testid="change-dates-checkIn"]
+2025-04-14 15:03:36,249 - ListingPage - INFO - Retrieving text from element by Locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744632207_P3DH6CLXYE4V2tSG&previous_page_section_name=1000&federated_search_id=bc94980c-faac-4df3-a668-ce199cb60f79'> selector='[data-testid="change-dates-checkIn"]'>
+2025-04-14 15:03:36,267 - ListingPage - INFO - Getting locator for selector: [data-testid="change-dates-checkOut"]
+2025-04-14 15:03:36,267 - ListingPage - INFO - Retrieving text from element by Locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744632207_P3DH6CLXYE4V2tSG&previous_page_section_name=1000&federated_search_id=bc94980c-faac-4df3-a668-ce199cb60f79'> selector='[data-testid="change-dates-checkOut"]'>
+2025-04-14 15:03:36,281 - ListingPage - INFO - Getting locator for selector: #GuestPicker-book_it-trigger
+2025-04-14 15:03:36,281 - ListingPage - INFO - Retrieving text from element by Locator: <Locator frame=<Frame name= url='https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744632207_P3DH6CLXYE4V2tSG&previous_page_section_name=1000&federated_search_id=bc94980c-faac-4df3-a668-ce199cb60f79'> selector='#GuestPicker-book_it-trigger'>

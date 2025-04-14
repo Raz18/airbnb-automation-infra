@@ -1,0 +1,32 @@
+2025-04-14 16:26:11,765 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 16:26:12,038 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 16:26:12,038 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 16:26:12,094 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 16:26:12,094 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 16:26:12,109 - SearchResultsPage - INFO - Found 1 listings
+2025-04-14 16:26:12,110 - SearchResultsPage - INFO - Iterating over all pages of search results
+2025-04-14 16:26:12,110 - SearchResultsPage - INFO - Getting locator for selector: nav[aria-label="Search results pagination"] button
+2025-04-14 16:26:12,126 - SearchResultsPage - INFO - Total pages: 0
+2025-04-14 16:26:12,126 - SearchResultsPage - INFO - Validating search results
+2025-04-14 16:26:12,126 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="stays-page-heading"]
+2025-04-14 16:26:12,138 - SearchResultsPage - INFO - Search results count: 1000
+2025-04-14 16:26:12,138 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 16:26:12,139 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 16:26:19,371 - SearchResultsPage - INFO - Opened listing in new tab: https://www.airbnb.com/rooms/15388336?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744637171_P3ltDyXZ8bT72yu-&previous_page_section_name=1000&federated_search_id=aa589032-5c7a-40e7-9458-689d93246ba2
+2025-04-14 16:26:19,471 - SearchResultsPage - INFO - Validation results: {'location': True, 'guests': True, 'dates': True}
+2025-04-14 16:26:19,471 - SearchResultsPage - INFO - Looking for highest-rated listing
+2025-04-14 16:26:19,505 - SearchResultsPage - INFO - New highest rating found: 4.83 with 48 reviews
+2025-04-14 16:26:19,505 - SearchResultsPage - INFO - New highest rating found: 4.88 with 216 reviews
+2025-04-14 16:26:19,555 - SearchResultsPage - INFO - New highest rating found: 4.97 with 32 reviews
+2025-04-14 16:26:19,571 - SearchResultsPage - INFO - New highest rating found: 5.0 with 5 reviews
+2025-04-14 16:26:19,622 - SearchResultsPage - WARNING - Couldn't parse rating from 'New': could not convert string to float: 'New'
+2025-04-14 16:26:19,655 - SearchResultsPage - INFO - Same rating but more reviews: 5.0 with 6 reviews
+2025-04-14 16:26:19,822 - SearchResultsPage - INFO - Found highest rated listing with rating 5.0 and 6 reviews
+2025-04-14 16:26:19,822 - SearchResultsPage - INFO - Looking for cheapest listing
+2025-04-14 16:26:19,855 - SearchResultsPage - INFO - New lowest price found: 1366
+2025-04-14 16:26:19,955 - SearchResultsPage - INFO - New lowest price found: 1261
+2025-04-14 16:26:20,070 - SearchResultsPage - INFO - New lowest price found: 548
+2025-04-14 16:26:20,356 - SearchResultsPage - INFO - Found cheapest listing with price 548
+2025-04-14 16:26:20,472 - SearchResultsPage - WARNING - Error parsing rating: New – could not convert string to float: 'New'
+2025-04-14 16:26:20,489 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="stays-page-heading"]
+2025-04-14 16:26:20,489 - SearchResultsPage - INFO - Saved results to temp/cheapest_and_highest_rated_details_14-04-2025_16-26-20.json

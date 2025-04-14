@@ -1,0 +1,28 @@
+2025-04-14 14:11:02,784 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 14:11:03,111 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 14:11:03,111 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 14:11:03,168 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 14:11:03,168 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 14:11:03,190 - SearchResultsPage - INFO - Found 1 listings
+2025-04-14 14:11:03,192 - SearchResultsPage - INFO - Validating search results
+2025-04-14 14:11:03,192 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="stays-page-heading"]
+2025-04-14 14:11:03,255 - SearchResultsPage - INFO - Search results count: 1000
+2025-04-14 14:11:03,255 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="little-search-guests"]
+2025-04-14 14:11:03,306 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]:first-child
+2025-04-14 14:11:03,307 - SearchResultsPage - INFO - Clicking on a listing
+2025-04-14 14:11:05,418 - SearchResultsPage - ERROR - Failed to click on listing: Locator.click: Error: strict mode violation: locator("[data-testid=\"card-container\"]:first-child") resolved to 18 elements:
+    1) <div role="group" data-testid="card-container" aria-labelledby="title_15388336" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka get_by_role("group", name="Hotel room in Tel Aviv-Yafo")
+    2) <div role="group" data-testid="card-container" aria-labelledby="title_862903642693272687" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka locator("div:nth-child(2) > .c4mnd7m > .c1l1h97y > div > div > div > .cy5jw6o")
+    3) <div role="group" data-testid="card-container" aria-labelledby="title_17050170" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka locator("div:nth-child(3) > .c4mnd7m > .c1l1h97y > div > div > div > .cy5jw6o")
+    4) <div role="group" data-testid="card-container" aria-labelledby="title_17050310" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka locator("div:nth-child(4) > .c4mnd7m > .c1l1h97y > div > div > div > .cy5jw6o")
+    5) <div role="group" data-testid="card-container" aria-labelledby="title_1345916093307147451" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka locator("div:nth-child(5) > .c4mnd7m > .c1l1h97y > div > div > div > .cy5jw6o")
+    6) <div role="group" data-testid="card-container" aria-labelledby="title_603345490600081787" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka locator("div:nth-child(6) > .c4mnd7m > .c1l1h97y > div > div > div > .cy5jw6o")
+    7) <div role="group" data-testid="card-container" aria-labelledby="title_1238938482568079737" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka locator("div:nth-child(7) > .c4mnd7m > .c1l1h97y > div > div > div > .cy5jw6o")
+    8) <div role="group" data-testid="card-container" aria-labelledby="title_1105179385891227201" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka get_by_role("group", name="Hotel in Tel Aviv-Yafo")
+    9) <div role="group" data-testid="card-container" aria-labelledby="title_665818881844885425" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka locator("div:nth-child(10) > .c4mnd7m > .c1l1h97y > div > div > div > .cy5jw6o")
+    10) <div role="group" data-testid="card-container" aria-labelledby="title_23839715" class="cy5jw6o atm_5j_1ktse57 atm_70_87waog atm_j3_1u6x1zy atm_jb_4shrsx atm_mk_h2mmj6 atm_vy_7abht0 dir dir-ltr">…</div> aka locator("div:nth-child(11) > .c4mnd7m > .c1l1h97y > div > div > div > .cy5jw6o")
+    ...
+
+Call log:
+  - waiting for locator("[data-testid=\"card-container\"]:first-child")
+

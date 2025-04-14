@@ -1,0 +1,16 @@
+2025-04-14 16:43:00,803 - HomePage - INFO - Waiting for element to appear: [data-testid="structured-search-input-field-query"]
+2025-04-14 16:43:00,847 - HomePage - INFO - Home page loaded
+2025-04-14 16:43:00,852 - HomePage - INFO - Attempting to click element by selector: [data-testid="structured-search-input-field-query"] (Attempt 1/3)
+2025-04-14 16:43:02,950 - HomePage - INFO - Writing on element by selector: [data-testid="structured-search-input-field-query"]
+2025-04-14 16:43:07,016 - HomePage - INFO - Entered location: Tel Aviv
+2025-04-14 16:43:07,017 - HomePage - INFO - Selecting dates: check-in in 30 days for 3 days stay
+2025-04-14 16:43:07,018 - HomePage - INFO - Looking for check-in date: 14, Wednesday, May 2025.
+2025-04-14 16:43:09,151 - HomePage - INFO - Selected check-in date: 14, Wednesday, May 2025.
+2025-04-14 16:43:09,468 - HomePage - INFO - Looking for check-out date: 17, Saturday, May 2025.
+2025-04-14 16:43:11,551 - HomePage - INFO - Selected check-out date: 17, Saturday, May 2025.
+2025-04-14 16:43:11,551 - HomePage - INFO - Returning formatted dates: 5/14/2025 to 5/17/2025
+2025-04-14 16:43:11,552 - HomePage - INFO - Attempting to click element by selector: [data-testid="structured-search-input-field-guests-button"] (Attempt 1/3)
+2025-04-14 16:43:13,650 - HomePage - INFO - Attempting to click element by selector: [data-testid="stepper-adults-increase-button"] (Attempt 1/3)
+2025-04-14 16:43:15,699 - HomePage - INFO - Attempting to click element by selector: [data-testid="stepper-adults-increase-button"] (Attempt 1/3)
+2025-04-14 16:43:17,750 - HomePage - INFO - Attempting to click element by selector: [data-testid="structured-search-input-search-button"] (Attempt 1/3)
+2025-04-14 16:43:19,850 - HomePage - INFO - Clicked search button

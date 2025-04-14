@@ -1,0 +1,62 @@
+2025-04-14 18:43:48,071 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:43:48,180 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 18:43:48,180 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:43:48,324 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 18:43:48,325 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 18:43:48,348 - SearchResultsPage - INFO - Found 18 listings
+2025-04-14 18:43:48,348 - SearchResultsPage - INFO - Looking for highest-rated listing
+2025-04-14 18:43:48,348 - SearchResultsPage - INFO - Starting iteration over all pages of search results
+2025-04-14 18:43:48,348 - SearchResultsPage - INFO - Processing page 1
+2025-04-14 18:43:48,348 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:43:48,387 - SearchResultsPage - INFO - Collected 18 listings from page 1
+2025-04-14 18:43:48,387 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,410 - SearchResultsPage - INFO - New highest rating found: 4.83 with 48 reviews
+2025-04-14 18:43:48,411 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,427 - SearchResultsPage - INFO - New highest rating found: 4.88 with 216 reviews
+2025-04-14 18:43:48,428 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,443 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,481 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,498 - SearchResultsPage - INFO - New highest rating found: 5.0 with 5 reviews
+2025-04-14 18:43:48,498 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,530 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,557 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,611 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,626 - SearchResultsPage - WARNING - Couldn't parse rating from listing: could not convert string to float: 'New'
+2025-04-14 18:43:48,626 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,652 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,683 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,710 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,730 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,762 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,780 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,795 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,826 - SearchResultsPage - INFO - Looking for highest-rated listing in the current page
+2025-04-14 18:43:48,845 - SearchResultsPage - INFO - Found highest rated listing with rating 5.0 and 5 reviews
+2025-04-14 18:43:50,909 - SearchResultsPage - INFO - Attempting to navigate to page number 2
+2025-04-14 18:44:21,974 - SearchResultsPage - ERROR - Error navigating to next page: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("link", name="2").first
+  -     - locator resolved to <a target="listing_37209889" aria-labelledby="title_37209889" rel="noopener noreferrer nofollow" href="/rooms/37209889?adults=2&check_in=2025-05-14&check_out=2025-05-17&search_mode=regular_search&source_impression_id=p3_1744645429_P3CWUQ-CjEJyG1K_&previous_page_section_name=1000&federated_search_id=af619cf2-9925-41c9-ae92-68ae5dfd0159" class="l1ovpqvx atm_1he2i46_1k8pnbi_10saat9 atm_yxpdqi_1pv6nv4_10saat9 atm_1a0hdzc_w1h1e8_10saat9 atm_2bu6ew_929bqk_10saat9 atm_12oyo1u_73u7pn_10saat9 atm_fiaz40_1…></a>
+  -   - attempting click action
+  -     2 × waiting for element to be visible, enabled and stable
+  -       - element is visible, enabled and stable
+  -       - scrolling into view if needed
+  -       - done scrolling
+  -       - <img loading="eager" aria-hidden="true" fetchpriority="auto" elementtiming="LCP-target" src="https://a0.muscache.com/im/ml/photo_enhancement/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MzcyMDk4ODk=/original/e15e237d-f729-44f5-a67a-491d23a8840e.png?im_w=720" class="i1ezuexe atm_e2_idpfg4 atm_vy_idpfg4 atm_mk_stnw88 atm_e2_1osqo2v__1lzdix4 atm_vy_1osqo2v__1lzdix4 i1wndum8 atm_jp_pyzg9w atm_jr_nyqth1 i16t4q3z atm_vh_yfq0k3 dir dir-ltr" data-original-uri="https://a0.muscache.com/im/ml/photo_enhanc…/> from <div class="lxq01kf atm_9s_1txwivl atm_am_kyuy1d atm_ar_d67k9l l1tup9az atm_1p4glcj_1bp4okc dir dir-ltr">…</div> subtree intercepts pointer events
+  -     - retrying click action
+  -     - waiting 20ms
+  -     2 × waiting for element to be visible, enabled and stable
+  -       - element is visible, enabled and stable
+  -       - scrolling into view if needed
+  -       - done scrolling
+  -       - <img loading="eager" aria-hidden="true" fetchpriority="auto" elementtiming="LCP-target" src="https://a0.muscache.com/im/ml/photo_enhancement/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MzcyMDk4ODk=/original/e15e237d-f729-44f5-a67a-491d23a8840e.png?im_w=720" class="i1ezuexe atm_e2_idpfg4 atm_vy_idpfg4 atm_mk_stnw88 atm_e2_1osqo2v__1lzdix4 atm_vy_1osqo2v__1lzdix4 i1wndum8 atm_jp_pyzg9w atm_jr_nyqth1 i16t4q3z atm_vh_yfq0k3 dir dir-ltr" data-original-uri="https://a0.muscache.com/im/ml/photo_enhanc…/> from <div class="lxq01kf atm_9s_1txwivl atm_am_kyuy1d atm_ar_d67k9l l1tup9az atm_1p4glcj_1bp4okc dir dir-ltr">…</div> subtree intercepts pointer events
+  -     - retrying click action
+  -       - waiting 100ms
+  -     55 × waiting for element to be visible, enabled and stable
+  -        - element is visible, enabled and stable
+  -        - scrolling into view if needed
+  -        - done scrolling
+  -        - <img loading="eager" aria-hidden="true" fetchpriority="auto" elementtiming="LCP-target" src="https://a0.muscache.com/im/ml/photo_enhancement/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MzcyMDk4ODk=/original/e15e237d-f729-44f5-a67a-491d23a8840e.png?im_w=720" class="i1ezuexe atm_e2_idpfg4 atm_vy_idpfg4 atm_mk_stnw88 atm_e2_1osqo2v__1lzdix4 atm_vy_1osqo2v__1lzdix4 i1wndum8 atm_jp_pyzg9w atm_jr_nyqth1 i16t4q3z atm_vh_yfq0k3 dir dir-ltr" data-original-uri="https://a0.muscache.com/im/ml/photo_enhanc…/> from <div class="lxq01kf atm_9s_1txwivl atm_am_kyuy1d atm_ar_d67k9l l1tup9az atm_1p4glcj_1bp4okc dir dir-ltr">…</div> subtree intercepts pointer events
+  -      - retrying click action
+  -        - waiting 500ms
+

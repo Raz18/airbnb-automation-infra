@@ -1,0 +1,11 @@
+2025-04-14 17:55:24,063 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 17:55:24,282 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 17:55:24,282 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 17:55:24,581 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 17:55:24,614 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 17:55:24,668 - SearchResultsPage - INFO - Found 18 listings
+2025-04-14 17:55:24,687 - SearchResultsPage - INFO - Starting iteration over all pages of search results
+2025-04-14 17:55:24,687 - SearchResultsPage - INFO - Processing page 1
+2025-04-14 17:55:24,688 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 17:55:24,839 - SearchResultsPage - INFO - Collected 24 listings from page 1
+2025-04-14 17:55:25,869 - SearchResultsPage - INFO - Attempting to navigate to page number 2

@@ -1,0 +1,74 @@
+2025-04-14 18:19:01,721 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:01,786 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 18:19:01,786 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:01,994 - SearchResultsPage - INFO - Search results loaded
+2025-04-14 18:19:01,994 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
+2025-04-14 18:19:02,011 - SearchResultsPage - INFO - Found 1 listings
+2025-04-14 18:19:02,012 - SearchResultsPage - INFO - Starting iteration over all pages of search results
+2025-04-14 18:19:02,012 - SearchResultsPage - INFO - Processing page 1
+2025-04-14 18:19:02,013 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:03,169 - SearchResultsPage - INFO - Collected 24 listings from page 1
+2025-04-14 18:19:04,229 - SearchResultsPage - INFO - Attempting to navigate to page number 2
+2025-04-14 18:19:05,565 - SearchResultsPage - INFO - Processing page 2
+2025-04-14 18:19:05,565 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:06,652 - SearchResultsPage - INFO - Collected 18 listings from page 2
+2025-04-14 18:19:07,699 - SearchResultsPage - INFO - Attempting to navigate to page number 3
+2025-04-14 18:19:08,934 - SearchResultsPage - INFO - Processing page 3
+2025-04-14 18:19:08,977 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:10,050 - SearchResultsPage - INFO - Collected 18 listings from page 3
+2025-04-14 18:19:11,100 - SearchResultsPage - INFO - Attempting to navigate to page number 4
+2025-04-14 18:19:12,294 - SearchResultsPage - INFO - Processing page 4
+2025-04-14 18:19:12,295 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:13,351 - SearchResultsPage - INFO - Collected 18 listings from page 4
+2025-04-14 18:19:14,400 - SearchResultsPage - INFO - Attempting to navigate to page number 5
+2025-04-14 18:19:15,580 - SearchResultsPage - INFO - Processing page 5
+2025-04-14 18:19:15,581 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:16,657 - SearchResultsPage - INFO - Collected 18 listings from page 5
+2025-04-14 18:19:17,684 - SearchResultsPage - INFO - Attempting to navigate to page number 6
+2025-04-14 18:19:18,877 - SearchResultsPage - INFO - Processing page 6
+2025-04-14 18:19:18,878 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:19,935 - SearchResultsPage - INFO - Collected 18 listings from page 6
+2025-04-14 18:19:20,999 - SearchResultsPage - INFO - Attempting to navigate to page number 7
+2025-04-14 18:19:22,181 - SearchResultsPage - INFO - Processing page 7
+2025-04-14 18:19:22,182 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:23,241 - SearchResultsPage - INFO - Collected 18 listings from page 7
+2025-04-14 18:19:24,298 - SearchResultsPage - INFO - Attempting to navigate to page number 8
+2025-04-14 18:19:25,500 - SearchResultsPage - INFO - Processing page 8
+2025-04-14 18:19:25,501 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:26,544 - SearchResultsPage - INFO - Collected 18 listings from page 8
+2025-04-14 18:19:27,593 - SearchResultsPage - INFO - Attempting to navigate to page number 9
+2025-04-14 18:19:28,801 - SearchResultsPage - INFO - Processing page 9
+2025-04-14 18:19:28,802 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:29,868 - SearchResultsPage - INFO - Collected 18 listings from page 9
+2025-04-14 18:19:30,915 - SearchResultsPage - INFO - Attempting to navigate to page number 10
+2025-04-14 18:19:32,104 - SearchResultsPage - INFO - Processing page 10
+2025-04-14 18:19:32,104 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:33,220 - SearchResultsPage - INFO - Collected 18 listings from page 10
+2025-04-14 18:19:34,276 - SearchResultsPage - INFO - Attempting to navigate to page number 11
+2025-04-14 18:19:35,519 - SearchResultsPage - INFO - Processing page 11
+2025-04-14 18:19:35,519 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:36,628 - SearchResultsPage - INFO - Collected 18 listings from page 11
+2025-04-14 18:19:37,698 - SearchResultsPage - INFO - Attempting to navigate to page number 12
+2025-04-14 18:19:38,883 - SearchResultsPage - INFO - Processing page 12
+2025-04-14 18:19:38,883 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:39,923 - SearchResultsPage - INFO - Collected 18 listings from page 12
+2025-04-14 18:19:40,965 - SearchResultsPage - INFO - Attempting to navigate to page number 13
+2025-04-14 18:19:42,170 - SearchResultsPage - INFO - Processing page 13
+2025-04-14 18:19:42,170 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:43,216 - SearchResultsPage - INFO - Collected 18 listings from page 13
+2025-04-14 18:19:44,264 - SearchResultsPage - INFO - Attempting to navigate to page number 14
+2025-04-14 18:19:45,439 - SearchResultsPage - INFO - Processing page 14
+2025-04-14 18:19:45,440 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:46,475 - SearchResultsPage - INFO - Collected 18 listings from page 14
+2025-04-14 18:19:47,534 - SearchResultsPage - INFO - Attempting to navigate to page number 15
+2025-04-14 18:19:48,722 - SearchResultsPage - INFO - Processing page 15
+2025-04-14 18:19:48,723 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
+2025-04-14 18:19:49,759 - SearchResultsPage - INFO - Collected 18 listings from page 15
+2025-04-14 18:19:50,801 - SearchResultsPage - INFO - Attempting to navigate to page number 16
+2025-04-14 18:19:50,828 - SearchResultsPage - INFO - Next page link for page 16 not visible. Assuming last page reached.
+2025-04-14 18:19:50,829 - SearchResultsPage - INFO - Finished iterating 15 pages and collected 276 listings in total
+2025-04-14 18:19:50,829 - SearchResultsPage - INFO - Looking for highest-rated listing
+2025-04-14 18:19:50,857 - SearchResultsPage - INFO - New highest rating found: 4.56 with 43 reviews
+2025-04-14 18:19:50,868 - SearchResultsPage - INFO - New highest rating found: 4.92 with 36 reviews
+2025-04-14 18:19:50,896 - SearchResultsPage - WARNING - Couldn't parse rating from 'New': could not convert string to float: 'New'
+2025-04-14 18:19:50,983 - SearchResultsPage - INFO - New highest rating found: 4.95 with 38 reviews
