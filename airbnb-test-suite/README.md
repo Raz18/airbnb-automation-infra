@@ -51,11 +51,7 @@ The `test_second_case` demonstrates a complete user journey:
 - Save reservation information for reporting
 - Validate booking flow and details
 
-## Prerequisites
-
-...existing content...
-
-## Running the Tests on Linux
+## Running the Tests using pure python
 
 To run the test suite on a Linux system, follow these steps:
 
@@ -68,7 +64,6 @@ To run the test suite on a Linux system, follow these steps:
    source venv/bin/activate
    pip install -r requirements.txt
    playwright install
-   mkdir -p temp/test_runs
    ```
 
 3. **Run the Tests**:
@@ -77,7 +72,8 @@ To run the test suite on a Linux system, follow these steps:
    ```
 
 4. **View Logs**:
-   Logs will be saved in the `temp/test_runs` directory.
+   the cheapest/highly rated will be saved in a json format under temp folder
+    detailed Logs will be saved in the `temp/test_runs` directory.
 
 ## Running the Tests Using Docker
 
@@ -97,7 +93,7 @@ To run the test suite in a Dockerized environment, follow these steps:
 3. **Pass Additional Arguments**:
    To pass additional arguments to `pytest`, append them to the `run_tests.sh` command. For example:
    ```bash
-   ./run_tests.sh -k "test_second_case"
+   ./run_tests.sh  --headed
    ```
 
 4. **View Results**:
@@ -112,11 +108,12 @@ The test suite is highly configurable through environment variables or the `.env
 - `SLOWMO`: Slow down execution for debugging (in ms)
 - `TIMEOUT`: Maximum wait time for elements (in ms)
 - `RECORD_VIDEO`: Enable video recording of test runs
+- `PHONE_NUMBER`: user phone number to use in the tests
+- 
 
 ## Test Reports
 
 After test execution, detailed reports are available in:
-- HTML report: `temp/report.html`
 - Log files: `temp/test_runs/test_run_[timestamp].log`
 - Videos (if enabled): `temp/videos/`
 
@@ -126,5 +123,3 @@ To add new test cases:
 1. Create page objects for any new pages in the `pages` directory
 2. Add test methods in the `tests` directory
 3. Follow the existing patterns for maintainability
-
-...existing content...
