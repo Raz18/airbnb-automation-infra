@@ -377,7 +377,7 @@ class SearchResultsPage(BasePage):
         """Save the highest rated and cheapest listings to a file"""
         # Create temp directory if it doesn't exist
         os.makedirs("temp", exist_ok=True)
-        today_date = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
+        today_date = self.datetime_helper.get_timestamp()
         results = {
             "search_url": self.page.url,
             "search_title": self.get_search_title(),
