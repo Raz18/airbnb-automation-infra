@@ -28,9 +28,9 @@ def test_first_case(page):
     
     # Validate result filters match our search criteria
     validation_status = search_results_page.validate_search_results(
-        adults=2, 
-        check_in_date=check_in, 
-        check_out_date=check_out
+        guests_count=2,
+        check_in=check_in,
+        check_out=check_out
     )
     assert all(validation_status.values()), f"Search validation failed: {validation_status}"
     
