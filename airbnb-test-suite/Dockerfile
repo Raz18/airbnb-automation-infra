@@ -6,6 +6,8 @@ WORKDIR /app
 # Copy requirements first for better layer caching
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+# Ensure browsers are installed
+RUN playwright install
 
 # Copy the rest of the application
 COPY . .
