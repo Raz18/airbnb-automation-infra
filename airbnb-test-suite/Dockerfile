@@ -1,5 +1,5 @@
 
-FROM mcr.microsoft.com/playwright/python:latest
+FROM mcr.microsoft.com/playwright/python:v1.41.1-jammy
 LABEL authors="razsa"
 WORKDIR /app
 
