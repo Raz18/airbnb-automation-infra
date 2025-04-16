@@ -10,6 +10,7 @@ mkdir -p temp
 docker run --rm \
   -v "$(pwd)/temp:/app/temp" \
   -v "$(pwd)/.env:/app/.env" \
+  --ipc=host \
   airbnb-test-suite \
   python -m pytest tests/ "$@"
 
