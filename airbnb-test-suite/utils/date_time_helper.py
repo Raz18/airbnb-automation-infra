@@ -7,7 +7,7 @@ class DateTimeHelper:
     """Helper class for datetime operations and filename sanitization"""
 
     @staticmethod
-    def get_timestamp(format="%Y-%m-%d %H:%M:%S"):
+    def get_timestamp(format="%d-%m-%Y %H:%M:%S"):
         """Returns current timestamp in specified format"""
         return datetime.now().strftime(format)
 
