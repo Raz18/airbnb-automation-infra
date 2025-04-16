@@ -16,7 +16,7 @@ def browser_context_args():
 
 @pytest.fixture(scope="function")
 def page(browser, browser_context_args):
-    """Create a page shared across all tests in the session"""
+    """Create a page shared across all tests. function scoped"""
     context = browser.new_context(**browser_context_args)
     page = context.new_page()
     page.set_default_timeout(AppSettings.TIMEOUT)
