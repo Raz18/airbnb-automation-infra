@@ -8,10 +8,9 @@ mkdir -p temp
 
 # Run the tests in the Docker container with environment variables
 docker run --rm \
-  -v $(pwd):/app \
-  -v $(pwd)/temp:/app/temp \
-  --env-file .env \
-  mcr.microsoft.com/playwright/python:v1.51.0-jammy \
+  -v "$(pwd)/temp:/app/temp" \
+  -v "$(pwd)/.env:/app/.env" \
+  airbnb-test-suite \
   python -m pytest tests/ "$@"
 
 echo "Tests completed! Results saved in temp directory."
