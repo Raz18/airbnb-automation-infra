@@ -216,24 +216,41 @@ To run the test suite on a Linux system, follow these steps:
 
 To run the test suite in a Dockerized environment, follow these steps:
 
-1. **Build the Docker Image**:
+1. **Clone the repository to your machine using the command**:
+    ```bash
+    git clone https://github.com/Raz18/airbnb-automation-infra.git
+     ```
+
+2. **Navigate to the relevant airbnb-test-suite root directory under the cloned repository**:
+   ```bash
+   cd /airbnb-automation-infra/airbnb-test-suite
+   ```
+   
+3. **Enable permissions to relevant install.sh and run_tests.sh**:
+   ```bash
+   chmod 775 install.sh
+   chmod 775 run_tests.sh
+   ```
+   
+4. **Build the Docker Image**:
    ```bash
    ./install.sh
    ```
 
-2. **Run the Tests**:
+5. **Run the Tests**:
    Use the provided `run_tests.sh` script to execute the tests inside the Docker container:
    ```bash
    ./run_tests.sh
    ```
 
-3. **Pass Additional Arguments**:
+6. **Pass Additional Arguments**:
    To pass additional arguments to `pytest`, append them to the `run_tests.sh` command. For example:
    ```bash
    ./run_tests.sh  --headed
    ```
 
-4. **View Results**:
+7. **View Results**:
+   the cheapest/highly rated will be saved in a json format under temp folder
    Test results, including logs and reports, will be saved in the `temp` directory on your host machine.
 
 ## Configuration
