@@ -12,6 +12,6 @@ docker run --rm \
   -v "$(pwd)/.env:/app/.env" \
   --ipc=host \
   airbnb-test-suite \
-  python -m pytest tests/
+  python -m pytest -v -s tests/
 
 echo "Tests completed! Results saved in temp directory."
