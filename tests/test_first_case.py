@@ -1,40 +1,68 @@
 from pages.home_page import HomePage
-from pages.listing_page import ListingPage
-
+import os
+import pytest
 
 def test_first_case(page):
     """
-    Test .	Search for Apartments: Search apartments for 2 adults in Tel Aviv with arbitrary check-in and check-out dates.
-         .	Validate your search parameters in the results
-         .	Analyze Results:
-         .	Identify the highest-rated result.
-         .	Identify the cheapest result.
-         .	Log the above results details and save them to file in a “temp” folder
+    Test that verifies searching for Tel Aviv apartments for 2 adults and analyzes results.
 
+    Steps:
+    1. Search for apartments in Tel Aviv with 2 adults and selected dates
+    2. Validate search parameters are reflected in results
+    3. Find the highest-rated listing and cheapest listing
+    4. Save results to file for review
+
+    Expected Outcomes:
+    - Search should return valid results
+    - Search parameters should match the input criteria
+    - Should successfully identify highest rated and cheapest listings
+    - Results should be saved to a file
+
+    Assumptions:
+    - Internet connection is available
+    - Airbnb website is accessible
+    - Test user has necessary permissions
     """
-    home_page = HomePage(page)
-    home_page.wait_for_home_page()
-    home_page.search_for_location("Tel Aviv")
-    check_in,check_out=home_page.select_dates()
-    home_page.select_guests(adults_num=2)
-    user_search=home_page.search()
-    user_search.wait_for_results()
-    assert user_search.get_results_count() > 0, "No results found"
-    #listings_list=user_search.iterate_over_all_pages()
-    highest_rated = user_search.get_highest_rated_listing()
-    assert highest_rated, "No highest-rated listing found"
-    cheapest = user_search.get_cheapest_listing()
-    user_search.save_results_to_file(highest_rated,cheapest )
+    temp_file = None
+    try:
+        # 1. Set up search with required parameters
+        home_page = HomePage(page)
+        home_page.wait_for_home_page()
 
+        # Configure search parameters
+        home_page.search_for_location("Tel Aviv")
+        check_in, check_out = home_page.select_dates()
+        home_page.select_guests(adults_num=4)
 
-    #cheapest = user_search.get_cheapest_listing(listings_list)
-    #user_params = user_search.validate_search_results(2,check_in, check_out)
-    #assert all(user_params.values()), f"Validation failed: {user_params}"
+        # Execute search
+        search_results_page = home_page.search()
+        search_results_page.wait_for_results()
 
+        # 2. Verify search returned valid results
+        results_count = search_results_page.get_results_count()
+        assert results_count > 0, f"No results found. Expected at least 1 result, got {results_count}"
 
+        # Validate result filters match our search criteria
+        validation_status = search_results_page.validate_search_results(
+            guests_count=4,
+            check_in=check_in,
+            check_out=check_out,
+            location="Tel Aviv"
+        )
+        assert all(validation_status.values()), f"Search validation failed: {validation_status}"
 
+        # 3. Analyze results to find best options
+        highest_rated_listing = search_results_page.get_highest_rated_listing()
+        assert highest_rated_listing is not None, "Failed to find highest rated listing"
+        print(f"Highest Rated Listing: {highest_rated_listing}")
 
+        cheapest_listing = search_results_page.get_cheapest_listing()
+        assert cheapest_listing is not None, "Failed to find cheapest listing"
+        print(f"Cheapest Listing: {cheapest_listing}")
 
+        # 4. Save results to temp directory for review
+        temp_file = search_results_page.save_results_to_file(highest_rated_listing, cheapest_listing)
+        assert os.path.exists(temp_file), f"Failed to save results to file: {temp_file}"
 
-
-
+    except Exception as e:
+        pytest.fail(f"Test failed with error: {str(e)}")

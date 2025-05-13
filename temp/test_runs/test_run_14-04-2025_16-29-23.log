@@ -1,9 +1,0 @@
-2025-04-14 16:29:23,319 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
-2025-04-14 16:29:23,438 - SearchResultsPage - INFO - Search results loaded
-2025-04-14 16:29:23,439 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
-2025-04-14 16:29:23,510 - SearchResultsPage - INFO - Search results loaded
-2025-04-14 16:29:23,511 - SearchResultsPage - INFO - Getting locator for selector: [data-testid="card-container"]
-2025-04-14 16:29:23,541 - SearchResultsPage - INFO - Found 18 listings
-2025-04-14 16:29:23,560 - SearchResultsPage - INFO - Iterating over all pages of search results
-2025-04-14 16:29:23,591 - SearchResultsPage - INFO - Getting locator for selector: nav[aria-label="Search results pagination"] button
-2025-04-14 16:29:23,621 - SearchResultsPage - INFO - Total pages: 0

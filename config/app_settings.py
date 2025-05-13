@@ -12,7 +12,7 @@ class AppSettings:
 
     # Basic settings
     BASE_URL = os.getenv("BASE_URL", "https://www.airbnb.com")
-    HEADLESS = os.getenv("HEADLESS", "True").lower() == "true"
+    HEADLESS = os.getenv("HEADLESS", "False").lower() not in ["false", "0", "no"]
     SLOWMO = int(os.getenv("SLOWMO", "50"))
     TIMEOUT = int(os.getenv("TIMEOUT", "30000"))
 

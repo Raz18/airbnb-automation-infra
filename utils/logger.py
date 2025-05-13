@@ -1,5 +1,6 @@
 import logging
 import os
+import sys
 from datetime import datetime
 
 
@@ -16,9 +17,9 @@ def setup_logger(name):
         logger.setLevel(logging.INFO)
 
         # Create handlers
-        c_handler = logging.StreamHandler()  # Console handler
+        c_handler = logging.StreamHandler(sys.stdout)  # Console handler with stdout
         timestamp = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
-        f_handler = logging.FileHandler(f"temp/test_runs/test_run_{timestamp}.log")
+        f_handler = logging.FileHandler(f"temp/test_runs/test_run_{timestamp}.log", encoding='utf-8')
 
         # Set log level for handlers
         c_handler.setLevel(logging.INFO)

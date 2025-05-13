@@ -1,7 +1,0 @@
-2025-04-14 12:06:12,856 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
-2025-04-14 12:06:13,101 - SearchResultsPage - INFO - Search results loaded
-2025-04-14 12:06:13,101 - SearchResultsPage - INFO - Waiting for element to appear: [data-testid="card-container"]
-2025-04-14 12:06:13,159 - SearchResultsPage - INFO - Search results loaded
-2025-04-14 12:06:13,159 - SearchResultsPage - INFO - Validating search results
-2025-04-14 12:06:13,159 - SearchResultsPage - INFO - Retrieving text from element by selector: [data-testid="stays-page-heading"]
-2025-04-14 12:06:13,193 - SearchResultsPage - INFO - Search results count: 1000
