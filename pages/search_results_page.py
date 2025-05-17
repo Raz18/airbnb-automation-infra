@@ -142,6 +142,7 @@ class SearchResultsPage(BasePage):
         self.logger.info(f"Navigating to listing URL: {listing_url}")
         self.page.goto(f'https://www.airbnb.com/{listing_url}')
         listing_page = ListingPage(self.page)
+        # Wait for page load and handle translation popup
         listing_page.wait_for_page_load()
         return listing_page
 

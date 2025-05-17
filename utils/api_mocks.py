@@ -16,10 +16,16 @@ class APIMockHandler:
     def __init__(self):
         self._mock_responses: Dict[str, Dict[str, Any]] = {
             "phone_verification": {
-                "url_pattern": "**/api/v2/phone_verifications**",
+                "url_pattern": "**/api/v2/phone_one_time_passwords**",
                 "response": {
                     "status": 200,
-                    "body": {"success": True, "verified": True}
+                    "body": {
+                        "internationalPhoneNumber": "",
+                        "nationalPhoneNumber": "",
+                        "success": True,
+                        "deliveryMethod": "TEXT",
+                        "codeLength": 6
+                    }
                 }
             },
             # Add more mock responses here as needed

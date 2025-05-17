@@ -19,14 +19,16 @@ class HomePage(BasePage):
     """
 
     # --- Locators (Using User-Provided Locators) ---
+    HOMES_TAB='Homes'
     SEARCH_BAR = '[data-testid="structured-search-input-field-query"]'
+    EXPERIENCES_POPUP_HEADING='Experiences on Airbnb are'
     # Note: LOCATION_INPUT is same as SEARCH_BAR in the provided file.
     # If they are distinct after clicking, separate locators might be needed.
     LOCATION_INPUT = '[data-testid="structured-search-input-field-query"]'
     # Note: Date buttons are not defined here as selection uses get_by_role with dynamic names.
     # CHECK_IN_BUTTON = '[data-testid="structured-search-input-field-split-dates-0"]' # Original, unused by new date logic
     # CHECK_OUT_BUTTON = '[data-testid="structured-search-input-field-split-dates-1"]' # Original, unused by new date logic
-    GUESTS_BUTTON = '[data-testid="structured-search-input-field-guests-button"]'
+    GUESTS_BUTTON_NAME = 'Who Add guests'
     SEARCH_BUTTON = '[data-testid="structured-search-input-search-button"]'
     # CALENDAR_DAY = 'data-testid^="calendar-day-"' # Original, unused by new date logic
     ADULTS_INCREASE = '[data-testid="stepper-adults-increase-button"]'
@@ -35,17 +37,34 @@ class HomePage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
         # Logger is initialized in BasePage
+    
+    def close_experiences_popup(self):
+        """Close the experiences popup if it is present."""
+        self.logger.info("Checking if experiences popup is present...")
+        self.page.wait_for_timeout(5000)
+        experience_popup=self.get_by_role("heading", name=self.EXPERIENCES_POPUP_HEADING)
+        if experience_popup.is_visible(timeout=10000):
+            self.logger.info("Experiences popup found. Closing it...")
+            self.click_element(self.get_by_role("button", name="Explore experiences"))
+            self.logger.info("Experiences popup closed.")
+        else:
+            self.logger.info("No experiences popup to close. Proceeding...")
 
-    def navigate_to_home(self):
+    def navigate_to_homes_tab(self):
         """Navigate to Airbnb home page defined in AppSettings."""
-        self.navigate_to(AppSettings.BASE_URL)
-        self.wait_for_home_page()
+        self.get_by_role('tab', name=self.HOMES_TAB).click()
 
     def wait_for_home_page(self, timeout: int = 15000):
-        """Wait for the home page search bar to be visible."""
+        """Wait for the home page to be fully loaded."""
+
         self.logger.info("Waiting for Home Page to load...")
+        self.logger.info('first, navigating to homes tab')
+        self.navigate_to_homes_tab()
+        self.logger.info('second, closing experiences popup')
+        self.close_experiences_popup()
+        self.logger.info('third, waiting for search bar to be visible')
         self.wait_for_element(self.SEARCH_BAR, timeout=timeout)  # Use user's SEARCH_BAR locator
-        self.logger.info("Home Page loaded.")
+        self.logger.info("Home Page loaded Successfully.")
         # Consider adding cookie banner handling here if necessary
 
     def search_for_location(self, location: str):
@@ -125,14 +144,14 @@ class HomePage(BasePage):
     def select_guests(self, adults_num: int = 1, kids_num: int = 0):
         """Select number of guests using user's locators."""
         self.logger.info(f"Selecting guests: Adults={adults_num}, Kids={kids_num}")
-        self.click_element(self.GUESTS_BUTTON)
+        self.click_element(self.get_by_role("button", name=self.GUESTS_BUTTON_NAME))
         # Optional: Wait for the guest selection panel to appear if needed
         # self.wait_for_element('[data-testid="structured-search-input-field-guests-panel"]') # Example panel locator
 
         # Add adults
         # Note: Assumes clicking N times works from default state.
         # A more robust approach would check current value first.
-        adult_increment_button = self.locate(self.ADULTS_INCREASE)
+        adult_increment_button = self.locate(self.ADULTS_INCREASE).first
         self.logger.info(f"Clicking adult increment {adults_num} times...")
         for i in range(adults_num):
             try:
@@ -146,7 +165,7 @@ class HomePage(BasePage):
 
         # Add kids if needed
         if kids_num > 0:
-            kids_increment_button = self.locate(self.KIDS_INCREASE)
+            kids_increment_button = self.locate(self.KIDS_INCREASE).first
             self.logger.info(f"Clicking kids increment {kids_num} times...")
             for i in range(kids_num):
                 try:

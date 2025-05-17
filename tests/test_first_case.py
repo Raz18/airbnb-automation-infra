@@ -23,16 +23,18 @@ def test_first_case(page):
     - Airbnb website is accessible
     - Test user has necessary permissions
     """
-    temp_file = None
+    # Test parameters
+    LOCATION = "Tel Aviv"
+    ADULTS = 2  
     try:
         # 1. Set up search with required parameters
         home_page = HomePage(page)
         home_page.wait_for_home_page()
 
         # Configure search parameters
-        home_page.search_for_location("Tel Aviv")
+        home_page.search_for_location(LOCATION)
         check_in, check_out = home_page.select_dates()
-        home_page.select_guests(adults_num=4)
+        home_page.select_guests(adults_num=ADULTS)
 
         # Execute search
         search_results_page = home_page.search()
@@ -44,7 +46,7 @@ def test_first_case(page):
 
         # Validate result filters match our search criteria
         validation_status = search_results_page.validate_search_results(
-            guests_count=4,
+            guests_count=ADULTS,
             check_in=check_in,
             check_out=check_out,
             location="Tel Aviv"

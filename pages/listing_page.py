@@ -5,6 +5,7 @@ import os
 import json
 from typing import Dict, Optional, Any, Union, List
 from playwright.sync_api import Page, Locator, expect, Error
+from datetime import datetime
 
 # Assuming BasePage is correctly imported and provides helpers
 from pages.base_page import BasePage  #
@@ -23,7 +24,7 @@ class ListingPage(BasePage):
     # --- Locators (User-Provided) ---
     LISTING_PAGE = 'div[class="_88xxct"]'  # Main page container check
     LISTING_TITLE = 'div[class="_1czgyoo"]'  # Specific class for title
-    TRANSLATION_POPUP = '[data-testid="translation-announce-modal"]'  #
+    TRANSLATION_POPUP = 'translation-announce-modal'  #
     RESERVE_BUTTON_TEXT = 'Reserve'  # Text used for get_by_role
 
     # Reservation card locators (User-Provided)
@@ -31,14 +32,14 @@ class ListingPage(BasePage):
     TOTAL_PRICE = 'div[class="_1avmy66"]'  # Container for total price
     PER_NIGHT_PRICE = "._1k1ce2w"  # Container/element for per-night price
     PER_NIGHT_PRICE_SPAN_CLASS = 'u1y3vocb'  # Specific class within per-night price
-    PRICE_SUMMARY = 'div[class="_1n7cvm7"]'  # Often contains fee breakdown
+      # Often contains fee breakdown
     CHECKIN_DATE = '[data-testid="change-dates-checkIn"]'  # Check-in date display
     CHECKOUT_DATE = '[data-testid="change-dates-checkOut"]'  # Check-out date display
     GUEST_COUNT = "#GuestPicker-book_it-trigger"  # Guest count display/trigger
 
     # Fee breakdown locators (User-Provided)
     # NOTE: Selectors using specific classes like _1n7cvm7, _14omvfj, _18x3iiu, _1k4xcdh are brittle
-    PRICE_BREAKDOWN_CONTAINER = 'div._1n7cvm7'  # Same as PRICE_SUMMARY?
+    PRICE_BREAKDOWN_CONTAINER = 'div._1n7cvm7' 
     PRICE_ROW = 'div._14omvfj'  # Row within fee breakdown
     ROW_DESCRIPTION = 'span._18x3iiu'  # Description part of a fee row
     ROW_AMOUNT = 'span._1k4xcdh, span._1rc8xn5'  # Amount part of a fee row
@@ -47,14 +48,18 @@ class ListingPage(BasePage):
 
     # Reservation confirmation locators (User-Provided)
     RESERVATION_CARD_DETAILS = 'div[data-testid="payments-application"]'  # Container for confirm step
-    RESERVATION_TOTAL_PRICE_SPAN_CLASS = 'span._j1kt73'  # Specific class for total price on confirm page
-    RESERVATION_GUEST_LABEL = 'Guests'  # Text label near guest info
-    RESERVATION_DATES_LABEL = 'Dates'  # Text label near date info
+    RESERVATION_TOTAL_PRICE_SPAN_CLASS = 'div[data-testid="price-item-total"] span'  # Specific class for total price on confirm page
+    RESERVATION_GUEST_LABEL = 'div[data-section-id="GUEST_PICKER"]'  # Text label near guest info
+    RESERVATION_DATES_LABEL = 'div[data-section-id="DATE_PICKER"]'
+    EDIT_DATES_BUTTON = 'button[data-testid="checkout_platform.DATE_PICKER.edit"]'
+    CHECKIN_INPUT = '#checkIn-book_it'  # Input field for check-in date
+    CHECKOUT_INPUT = '#checkOut-book_it'  # Input field for check-out date
 
     # Phone number input (User-Provided)
     PHONE_NUMBER_INPUT = '[data-testid="login-signup-phonenumber"]'  #
     PHONE_NUMBER_CONFIRMATION_TEXT = "Confirm your number"  # Text for visibility check
-    CONTINUE_BUTTON = '[data-testid="checkout-button"]'  # Continue button after phone entry
+    CONTINUE_BUTTON = 'button[data-testid="signup-login-submit-btn"]' # Continue button after phone entry
+    POPUP_PHONE_VERIFICATION = 'div[role="dialog"]'  
 
     def __init__(self, page: Page):
         super().__init__(page)
@@ -76,16 +81,34 @@ class ListingPage(BasePage):
             self.take_screenshot(f"error_listing_load_{self.datetime_helper.get_filename_timestamp()}.png")  #
             raise
 
-    def _close_translation_popup_if_present(self, timeout_ms: int = 3000):
+    def _close_translation_popup_if_present(self, timeout_ms: int = 5000):
         """Checks for and closes the translation popup using its locator."""
-        popup_locator = self.locate(self.TRANSLATION_POPUP)
+        self.logger.info("Checking for translation popup...")
+        #self.page.wait_for_timeout(3000)
+        # Updated selector to match new popup structure
+        popup_locator = self.page.get_by_test_id(self.TRANSLATION_POPUP)
         try:
+            # Wait longer for the popup to appear
             if popup_locator.is_visible(timeout=timeout_ms):
-                self.logger.info("Translation popup detected, closing it...")
-                # Assume close button is standard within this data-testid modal
-                close_button = popup_locator.get_by_role("button", name="Close")
-                self.click_element(close_button, timeout=timeout_ms)  #
-                self.logger.info("Translation popup closed.")
+                self.logger.info("Translation popup detected, attempting to close it...")
+                try:
+                    # Try to find and click the close button using aria-label
+                    close_button = popup_locator.get_by_role("button", name="Close")
+                    if close_button.is_visible(timeout=2000):
+                        self.click_element(close_button, timeout=2000)
+                        self.logger.info("Translation popup closed using close button.")
+                        return
+                except Error:
+                    self.logger.debug("Close button not found, trying alternative methods...")                        
+                # Last resort: click on the right side of the page
+                try:
+                    self.logger.info("Attempting to click on the right side of the page to dismiss popup...")
+                    # Click on the right side of the viewport (80% from left edge)
+                    self.page.mouse.click(int(self.page.viewport_size["width"] * 0.8), self.page.viewport_size["height"] // 2)
+                    self.logger.info("Clicked right side of page to dismiss popup")
+                except Exception as e:
+                    self.logger.warning(f"Failed to click right side of page: {e}")
+                    
         except Error:
             self.logger.debug("Translation popup not found or already closed.")
         except Exception as e:
@@ -132,10 +155,27 @@ class ListingPage(BasePage):
             return None
 
     def _parse_price_digits(self, text: Optional[str]) -> Optional[str]:
-        """Extracts only digits from a string."""
-        if not text: return None
-        digits = ''.join(filter(str.isdigit, text))
-        return digits if digits else None
+        """Extracts only digits from a string and handles rounding."""
+        if not text:
+            return None
+        try:
+            # Remove currency symbols, commas, and any non-digit characters
+            cleaned_text = text.replace('₪', '').replace(',', '').replace(' ', '')
+            
+            # Handle decimal portion for rounding
+            if '.' in cleaned_text:
+                whole_part, decimal_part = cleaned_text.split('.')
+                # If decimal part is 50 or greater, round up
+                if int(decimal_part) >= 50:
+                    whole_part = str(int(whole_part) + 1)
+                return whole_part
+            
+            # If no decimal point, just return the digits
+            digits = ''.join(filter(str.isdigit, cleaned_text))
+            return digits if digits else None
+        except Exception as e:
+            self.logger.warning(f"Error parsing price from '{text}': {e}")
+            return None
 
     def _extract_listing_title(self) -> str:
         """Extract the listing title using LISTING_TITLE locator."""
@@ -251,7 +291,9 @@ class ListingPage(BasePage):
     def _extract_guest_count(self) -> str:
         """Extract guest count using GUEST_COUNT locator."""
         # Using the specific ID provided
-        guest_text = self._extract_text_safely(self.GUEST_COUNT)  #
+        guest_text = self._extract_text_safely(self.GUEST_COUNT) 
+        self.logger.info(f"Guest count: {guest_text}")
+         #
         if guest_text:
             # Extract the first number found
             guests_match = re.search(r'(\d+)', guest_text)
@@ -327,178 +369,217 @@ class ListingPage(BasePage):
 
     def validate_details_on_confirmation(self, expected_details: Dict[str, Any]):
         """
-        Validates key details on the 'Confirm and pay' step using user-provided locators.
-        Note: Validation scope is limited by the available defined locators.
-        Raises AssertionError on failure.
+        Validates that the reservation details on the confirmation page exactly match
+        the details saved from the reservation card.
+        
+        Args:
+            expected_details: Dictionary containing the reservation details saved from the listing page
         """
-        self.logger.info("Validating details on the confirmation step...")
+        self.logger.info("Validating reservation details on confirmation page...")
         validation_passed = True
         validation_messages = []
 
+        # Log the expected details we're validating against
+        self.logger.info("Expected reservation details from listing page:")
+        for key, value in expected_details.items():
+            self.logger.info(f"{key}: {value}")
+
         # --- Validate Total Price ---
         try:
-            # Use the specific class defined by user for total price on confirm page [cite: 3]
-            # NOTE: Class _j1kt73 is likely unstable [cite: 3]
-            confirm_total_locator = self.locate(f"span.{self.RESERVATION_TOTAL_PRICE_SPAN_CLASS}").first  # [cite: 3]
+            confirm_total_locator = self.page.locator('[data-testid="price-item-total"] span').first
             actual_price_text = self._extract_text_safely(confirm_total_locator, timeout=15000)
             actual_price_str = self._parse_price_digits(actual_price_text)
-            expected_price_str = expected_details.get('total_price')  # Should be digits
+            expected_price_str = self._parse_price_digits(expected_details.get('total_price', 'N/A'))
+
+            self.logger.info(f"Price validation - Expected: {expected_details.get('total_price')} -> {expected_price_str}")
+            self.logger.info(f"Price validation - Actual: {actual_price_text} -> {actual_price_str}")
 
             if actual_price_str == expected_price_str:
-                self.logger.info(
-                    f"Confirmation Total Price: MATCH (Expected: {expected_price_str}, Found: {actual_price_str})")
+                self.logger.info("✓ Total Price matches")
             else:
-                msg = f"Confirmation Total Price MISMATCH. Expected: '{expected_price_str}', Found: '{actual_price_str}'"
+                msg = f"Total Price mismatch - Expected: '{expected_price_str}', Found: '{actual_price_str}'"
                 self.logger.warning(msg)
                 validation_messages.append(msg)
                 validation_passed = False
         except Exception as e:
-            msg = f"Could not validate confirmation total price using locator '{self.RESERVATION_TOTAL_PRICE_SPAN_CLASS}': {e}"  # [cite: 3]
+            msg = f"Failed to validate total price: {e}"
             self.logger.error(msg)
             validation_messages.append(msg)
             validation_passed = False
 
-        # --- Validate Guests (Attempt using Label) ---
-        # NOTE: This validation relies on finding the value near the label text.
-        # The structure is assumed and may not be reliable without specific locators.
+        # --- Validate Guests ---
         try:
-            guest_value = self._find_value_near_label(self.RESERVATION_GUEST_LABEL)  # [cite: 3]
-            actual_guests_match = re.search(r'(\d+)', guest_value) if guest_value else None
+            guest_section = self.page.locator('[data-section-id="GUEST_PICKER"]').first
+            guest_text = guest_section.text_content()
+            actual_guests_match = re.search(r'(\d+)', guest_text) if guest_text else None
             actual_guests = actual_guests_match.group(1) if actual_guests_match else "N/A"
             expected_guests = expected_details.get('guests', 'N/A')
 
+            self.logger.info(f"Guest validation - Expected: {expected_guests}")
+            self.logger.info(f"Guest validation - Actual: {actual_guests}")
+
             if actual_guests == expected_guests:
-                self.logger.info(f"Confirmation Guests: MATCH (Expected: {expected_guests}, Found: {actual_guests})")
+                self.logger.info("✓ Guest count matches")
             else:
-                msg = f"Confirmation Guests MISMATCH. Expected: '{expected_guests}', Found: '{actual_guests}' (from text near label)"
+                msg = f"Guest count mismatch - Expected: '{expected_guests}', Found: '{actual_guests}'"
                 self.logger.warning(msg)
                 validation_messages.append(msg)
                 validation_passed = False
         except Exception as e:
-            msg = f"Could not validate confirmation guests near label '{self.RESERVATION_GUEST_LABEL}': {e}"  # [cite: 3]
-            self.logger.error(msg)
-            validation_messages.append(msg)
-            validation_passed = False  # Mark as fail if check couldn't be done reliably
-
-        # --- Validate Dates (Attempt using Label) ---
-        # Similar challenge as Guests.
-        try:
-            date_value = self._find_value_near_label(self.RESERVATION_DATES_LABEL)  # [cite: 3]
-            expected_check_in = expected_details.get('check_in', 'N/A')
-            expected_check_out = expected_details.get('check_out', 'N/A')
-
-            # Simple check if expected dates are substrings of the displayed text
-            if date_value and expected_check_in in date_value and expected_check_out in date_value:
-                self.logger.info(
-                    f"Confirmation Dates: MATCH (Found '{expected_check_in}' and '{expected_check_out}' in '{date_value}')")
-            else:
-                msg = f"Confirmation Dates MISMATCH. Expected: '{expected_check_in}' - '{expected_check_out}', Found: '{date_value}'"
-                self.logger.warning(msg)
-                validation_messages.append(msg)
-                validation_passed = False
-        except Exception as e:
-            msg = f"Could not validate confirmation dates near label '{self.RESERVATION_DATES_LABEL}': {e}"  # [cite: 3]
+            msg = f"Failed to validate guest count: {e}"
             self.logger.error(msg)
             validation_messages.append(msg)
             validation_passed = False
 
-        # --- Add other validations if locators were provided (e.g., for Title, Cleaning Fee) ---
-        # Example placeholder:
-        # if self.CONFIRM_LISTING_TITLE: # Check if locator constant exists
-        #     try:
-        #         # ... validation logic using self.CONFIRM_LISTING_TITLE ...
-        #     except Exception as e: ...
+        # --- Validate Dates ---
+        try:
+            # Click edit dates button to show the date picker
+            edit_dates_button = self.page.locator(self.EDIT_DATES_BUTTON).first
+            self.click_element(edit_dates_button)
+            self.logger.info("Clicked edit dates button")
 
-        # --- Final Assertion ---
+            # Get check-in date from input value
+            checkin_input = self.page.locator(self.CHECKIN_INPUT).first
+            actual_checkin = checkin_input.get_attribute('value')
+            expected_checkin = expected_details.get('check_in', 'N/A')
+
+            # Get check-out date from input value
+            checkout_input = self.page.locator(self.CHECKOUT_INPUT).first
+            actual_checkout = checkout_input.get_attribute('value')
+            expected_checkout = expected_details.get('check_out', 'N/A')
+
+            self.logger.info(f"Date validation - Expected check-in: {expected_checkin}")
+            self.logger.info(f"Date validation - Actual check-in: {actual_checkin}")
+            self.logger.info(f"Date validation - Expected check-out: {expected_checkout}")
+            self.logger.info(f"Date validation - Actual check-out: {actual_checkout}")
+            #close the date picker
+            close_button = self.page.get_by_role("button", name="Close")
+            self.click_element(close_button)
+
+            if actual_checkin == expected_checkin and actual_checkout == expected_checkout:
+                self.logger.info("✓ Dates match")
+            else:
+                msg = f"Dates mismatch - Expected: '{expected_checkin}' - '{expected_checkout}', Found: '{actual_checkin}' - '{actual_checkout}'"
+                self.logger.warning(msg)
+                validation_messages.append(msg)
+                validation_passed = False
+
+        except Exception as e:
+            msg = f"Failed to validate dates: {e}"
+            self.logger.error(msg)
+            validation_messages.append(msg)
+            validation_passed = False
+
+        # --- Final Validation Result ---
         if not validation_passed:
-            self.take_screenshot(
-                f"error_confirm_validation_{self.datetime_helper.get_filename_timestamp()}.png")  # [cite: 1]
-            error_message = "Validation failed on confirmation page:\n" + "\n".join(validation_messages)
+            self.take_screenshot(f"error_confirm_validation_{self.datetime_helper.get_filename_timestamp()}.png")
+            error_message = "Reservation details validation failed:\n" + "\n".join(validation_messages)
             raise AssertionError(error_message)
         else:
-            self.logger.info("All attempted confirmation details validated successfully.")
+            self.logger.info("✓ All reservation details match between listing and confirmation page")
 
-    def _find_value_near_label(self, label_text: str, timeout: int = 5000) -> Optional[str]:
-        """Helper to find text content presumably following a text label."""
-        # This is brittle and depends heavily on DOM structure.
-        self.logger.debug(f"Attempting to find value near label: '{label_text}'")
-        try:
-            # Find the label text itself
-            label_locator = self.page.locator(f"text='{label_text}'").first
-            expect(label_locator).to_be_visible(timeout=timeout)
-            # Attempt to find the value in common sibling/parent patterns using XPath
-            # This looks for a div sibling OR a div sibling of the parent that contains text
-            value_locator = label_locator.locator(
-                "xpath=./following-sibling::div | ../div[string-length(normalize-space(.))>0 and not(self::*[contains(text(),'" + label_text + "')]) ]").first
-            if value_locator.is_visible(timeout=1000):
-                return value_locator.text_content(timeout=1000).strip()
-            self.logger.warning(f"Could not find value element near label '{label_text}' using common patterns.")
-            return None
-        except Exception as e:
-            self.logger.warning(f"Error finding value near label '{label_text}': {e}")
-            return None
-
-    def enter_phone_number(self, country_code: Optional[str] = None, phone_number: Optional[str] = None) -> bool:
+    def enter_phone_number_and_validate(self, country_code: Optional[str] = None, phone_number: Optional[str] = None) -> bool:
         """
-        Enters phone number using user-provided locators and AppSettings.
-        Includes route interception logic from original code.
-        Returns True if successful up to clicking Continue (if enabled).
+        Enters phone number and handles verification process.
+        
+        Args:
+            country_code (Optional[str]): Country code for the phone number. If not provided, uses default.
+            phone_number (Optional[str]): Phone number to enter. If not provided, uses USER_PHONE from AppSettings.
+            
+        Returns:
+            bool: True if phone number entry and verification were successful, False otherwise.
+            
+        Raises:
+            ValueError: If no phone number is provided or configured in AppSettings.
         """
+        # Get phone number to use
         phone_number_to_use = phone_number or AppSettings.USER_PHONE
         if not phone_number_to_use:
             self.logger.error("Phone number is not provided or configured in AppSettings.")
             raise ValueError("Phone number is required for enter_phone_number.")
 
-        # Mask phone number in logs
+        # Mask phone number for logging
         masked_phone = '*' * (len(phone_number_to_use) - 3) + phone_number_to_use[-3:]
         self.logger.info(f"Attempting to enter phone number: {masked_phone}")
 
-        phone_input = self.locate(self.PHONE_NUMBER_INPUT).first
         try:
-            # Wait for the input field to be visible and editable
-            expect(phone_input, "Phone number input should be visible").to_be_visible(timeout=15000)
-            expect(phone_input, "Phone number input should be editable").to_be_editable(timeout=5000)
-        except Error as e:
-            self.logger.error(f"Phone number input '{self.PHONE_NUMBER_INPUT}' not visible/editable: {e}")
-            self.take_screenshot(f"error_phone_input_visibility_{self.datetime_helper.get_filename_timestamp()}.png")
+            # Step 1: Enter phone number
+            if not self._enter_phone_number_in_field(phone_number_to_use):
+                return False
+
+            # Step 2: Click continue and handle verification
+            if not self._handle_phone_verification():
+                return False
+
+            self.logger.info("Phone number entry and verification completed successfully.")
+            return True
+
+        except Exception as e:
+            self.logger.error(f"Unexpected error during phone entry process: {e}")
+            self.take_screenshot(f"error_phone_unexpected_{self.datetime_helper.get_filename_timestamp()}.png")
             return False
 
-        # Fill the phone number
+    def _enter_phone_number_in_field(self, phone_number: str) -> bool:
+        """
+        Enters the phone number into the input field.
+        
+        Args:
+            phone_number (str): The phone number to enter.
+            
+        Returns:
+            bool: True if phone number was entered successfully, False otherwise.
+        """
         try:
-            # Clear the field first in case there's pre-filled data
+            phone_input = self.locate(self.PHONE_NUMBER_INPUT).first
+            
+            # Wait for input field to be ready
+            expect(phone_input, "Phone number input should be visible").to_be_visible(timeout=15000)
+            expect(phone_input, "Phone number input should be editable").to_be_editable(timeout=5000)
+            
+            # Clear and fill the field
             phone_input.clear(timeout=5000)
-            self.write_on_element(phone_input, phone_number_to_use)
-            self.logger.info("Phone number entered.")
-            # Optional: Verify the value entered
-            expect(phone_input).to_have_value(phone_number_to_use, timeout=3000)
+            self.write_on_element(phone_input, phone_number)
+            
+            # Verify the value was entered correctly
+            expect(phone_input).to_have_value(phone_number, timeout=3000)
+            self.logger.info("Phone number entered successfully.")
+            return True
+            
         except Error as e:
-            self.logger.error(f"Failed to write or verify phone number: {e}")
+            self.logger.error(f"Failed to enter phone number: {e}")
             self.take_screenshot(f"error_phone_fill_{self.datetime_helper.get_filename_timestamp()}.png")
             return False
 
+    def _handle_phone_verification(self) -> bool:
+        """
+        Handles the phone verification process after entering the phone number.
+        
+        Returns:
+            bool: True if verification was successful, False otherwise.
+        """
         try:
-            # Set up phone verification mock
-            if not self._api_mock_handler.setup_mock(self.page, "phone_verification"):
-                self.logger.error("Failed to set up phone verification mock")
-                return False
-
-            # Click continue button using its data-testid locator
+            # Click continue button
             continue_button = self.locate(self.CONTINUE_BUTTON).first
             expect(continue_button, "'Continue' button should be enabled").to_be_enabled(timeout=10000)
             self.click_element(continue_button)
             self.logger.info("Clicked Continue button after entering phone.")
 
-            self.logger.info("Phone number entry and continue click successful.")
+            # Set up mock after clicking continue
+            if not self._api_mock_handler.setup_mock(self.page, "phone_verification"):
+                self.logger.error("Failed to set up phone verification mock")
+                return False
+
+            # Wait for verification popup
+            popup_locator = self.page.locator(self.POPUP_PHONE_VERIFICATION)
+            self.wait_for_element(popup_locator, timeout=10000)
+            self.logger.info("Phone verification popup appeared successfully.")
+            
             return True
 
         except Error as e:
-            self.logger.error(f"Error during phone continue/validation step: {e}")
-            self.take_screenshot(f"error_phone_continue_{self.datetime_helper.get_filename_timestamp()}.png")
-            return False
-        except Exception as e:
-            self.logger.error(f"Unexpected error during phone continue step: {e}")
-            self.take_screenshot(f"error_phone_unexpected_{self.datetime_helper.get_filename_timestamp()}.png")
+            self.logger.error(f"Error during phone verification: {e}")
+            self.take_screenshot(f"error_phone_verification_{self.datetime_helper.get_filename_timestamp()}.png")
             return False
         finally:
-            # Clean up the mock
+            # Always clean up the mock
             self._api_mock_handler.remove_mock(self.page, "phone_verification")

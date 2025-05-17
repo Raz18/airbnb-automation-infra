@@ -21,6 +21,7 @@ def test_second_case(page):
     4. Extract and save reservation details
     5. Proceed with reservation and validate details
     6. Enter phone number for verification
+    7. Validate phone number entry
     """
     # Test parameters
     LOCATION = "Tel Aviv"
@@ -32,7 +33,7 @@ def test_second_case(page):
     try:
         # Step 1: Perform search
         logger.info("Step 1: Performing search with specified parameters")
-        home_page.navigate_to_home()
+        home_page.wait_for_home_page()
         home_page.search_for_location(LOCATION)
         check_in, check_out = home_page.select_dates()
         home_page.select_guests(
@@ -65,9 +66,7 @@ def test_second_case(page):
 
         # Step 4: Navigate to listing and extract details
         logger.info("Step 4: Navigating to listing and extracting details")
-        listing_page = search_results_page.navigate_to_listing_url(highest_rated["url"])
-        listing_page.wait_for_page_load()
-        
+        listing_page = search_results_page.navigate_to_listing_url(highest_rated["url"])     
         reservation_details = listing_page.get_reservation_card_details()
         assert reservation_details, "Failed to extract reservation details"
         
@@ -80,11 +79,10 @@ def test_second_case(page):
         listing_page.click_reserve_button()
         listing_page.validate_details_on_confirmation(reservation_details)
 
-        # Step 6: Enter phone number
+        # Step 6: Enter phone number and validate
         logger.info("Step 6: Entering phone number")
-        phone_entry_success = listing_page.enter_phone_number()
+        phone_entry_success = listing_page.enter_phone_number_and_validate()
         assert phone_entry_success, "Failed to enter phone number"
-
         logger.info("Test completed successfully")
 
     except Exception as e:
